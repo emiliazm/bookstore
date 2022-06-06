@@ -24,10 +24,7 @@ const BookList = () => (
           author,
         } = book;
         return (
-          <Book
-            key={id}
-            {...{ id, bookTitle, author }}
-          />
+          <Book key={id} id={id} bookTitle={bookTitle} author={author} />
         );
       })}
     </ul>
