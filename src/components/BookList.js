@@ -1,34 +1,24 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 
-const dataList = [
-  {
-    id: 1,
-    bookTitle: 'book 1',
-    author: 'author 1',
-  },
-  {
-    id: 2,
-    bookTitle: 'book 2',
-    author: 'author 2',
-  },
-];
-
-const BookList = () => (
-  <div>
-    <ul className="ul-container">
-      {dataList.map((book) => {
-        const {
-          id,
-          bookTitle,
-          author,
-        } = book;
-        return (
-          <Book key={id} id={id} bookTitle={bookTitle} author={author} />
-        );
-      })}
-    </ul>
-  </div>
-);
+function BookList() {
+  const books = useSelector((state) => state.books);
+  return (
+    <div>
+      <ul className="ul-container">
+        {books.map((book) => (
+          <Book
+            key={book.id}
+            book={book}
+            id={book.id}
+            bookTitle={book.bookTitle}
+            author={book.author}
+          />
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export default BookList;
