@@ -7,9 +7,7 @@ const Book = (props) => {
   const { id, bookTitle, author } = props;
   const dispatch = useDispatch();
 
-  const removeHandler = () => {
-    dispatch(removeBook(id));
-  };
+  const removeHandler = () => { dispatch(removeBook(id)); };
 
   return (
     <li className="item" id={id}>
