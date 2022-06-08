@@ -5,6 +5,9 @@ import { Provider } from 'react-redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/configureStore';
+import { getBook } from './redux/books/books';
+
+store.dispatch(getBook());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
