@@ -5,8 +5,9 @@ import { addBook } from '../redux/books/books';
 
 export function Form() {
   const empty = {
-    bookTitle: '',
+    title: '',
     author: '',
+    category: '',
   };
 
   const [book, setBook] = useState(empty);
@@ -16,7 +17,7 @@ export function Form() {
   const bookTitleHandler = (e) => {
     setBook({
       ...book,
-      bookTitle: e.target.value,
+      title: e.target.value,
     });
   };
 
@@ -27,16 +28,25 @@ export function Form() {
     });
   };
 
+  const categoryHandler = (e) => {
+    setBook({
+      ...book,
+      category: e.target.value,
+    });
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
     const author = (book.author || '').trim();
-    const bookTitle = (book.bookTitle || '').trim();
+    const title = (book.title || '').trim();
+    const { category } = book;
 
-    if (author !== '' && bookTitle !== '') {
+    if (author !== '' && title !== '' && category !== '') {
       const book = {
         id: uuid(),
-        bookTitle,
+        title,
         author,
+        category,
       };
 
       dispatch(addBook(book));
@@ -51,7 +61,13 @@ export function Form() {
     <div>
       <h2>ADD NEW BOOK</h2>
       <form>
-        <input id="title" type="text" placeholder="Book title" value={book.bookTitle} onChange={bookTitleHandler} />
+        <select value={book.category} onChange={categoryHandler}>
+          <option value="">Select</option>
+          <option value="option1">Option1</option>
+          <option value="option2">Option2</option>
+          <option value="option3">Option3</option>
+        </select>
+        <input id="title" type="text" placeholder="Book title" value={book.title} onChange={bookTitleHandler} />
         <input type="text" placeholder="Author" value={book.author} onChange={authorHandler} />
         <button type="submit" onClick={onSubmit}>ADD BOOK</button>
       </form>
