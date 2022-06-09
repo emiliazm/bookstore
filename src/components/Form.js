@@ -58,18 +58,18 @@ export function Form() {
   };
 
   return (
-    <div>
-      <h2>ADD NEW BOOK</h2>
-      <form>
-        <select value={book.category} onChange={categoryHandler}>
-          <option value="">Select</option>
-          <option value="option1">Option1</option>
-          <option value="option2">Option2</option>
-          <option value="option3">Option3</option>
-        </select>
+    <div className="form-container">
+      <h2 className="h2-form">ADD NEW BOOK</h2>
+      <form className="inputs">
         <input id="title" type="text" placeholder="Book title" value={book.title} onChange={bookTitleHandler} />
-        <input type="text" placeholder="Author" value={book.author} onChange={authorHandler} />
-        <button type="submit" onClick={onSubmit}>ADD BOOK</button>
+        <input id="author" type="text" placeholder="Author" value={book.author} onChange={authorHandler} />
+        <select value={book.category} onChange={categoryHandler}>
+          <option value="">Category</option>
+          <option value="Action">Action</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Economy">Economy</option>
+        </select>
+        <button className="add white-font" type="submit" onClick={onSubmit}>ADD BOOK</button>
       </form>
     </div>
   );
