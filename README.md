@@ -29,7 +29,7 @@ Setting up this project locally:
 
 
 ## Live Demo
-
+[Live Demo Link](https://emiliazm.github.io/bookstore/)
 
 
 ## Prerequisites
