@@ -29,7 +29,6 @@ Setting up this project locally:
 
 
 ## Live Demo
-[Live Demo Link](https://emiliazm.github.io/bookstore/)
 
 
 ## Prerequisites
@@ -74,7 +73,7 @@ In the previous project, you worked on the setup of a React application using Cr
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/emiliazm/math-magicians/issues).
+Feel free to check the [issues page](https://github.com/emiliazm/bookstore/issues).
 
 ## Show your support
 
