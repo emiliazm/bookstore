@@ -12,15 +12,18 @@ import Categories from './pages/Categories';
 function App() {
   return (
     <Router>
-      <div className="header-container">
-        <h1>Bookstore CMS</h1>
-        <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/categories">Categories</Link></li>
+
+      <nav className="header-container">
+        <div className="navbar">
+          <h1 className="h1-header">Bookstore CMS</h1>
+          <ul className="links-container">
+            <li><Link to="/">BOOKS</Link></li>
+            <li className="grey-font"><Link to="/categories">CATEGORIES</Link></li>
           </ul>
-        </nav>
-      </div>
+        </div>
+        <i className="user-icon material-symbols-outlined">account_circle</i>
+      </nav>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/" />} />
