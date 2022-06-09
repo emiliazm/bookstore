@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Math-magicians
+# Bookstore
 
 > Hello!
 Bookstore is a single webpage created with React and redux that allow users to create a book collection. Re-creating this website you will see how to give some functionality to your sections and make your website more user-interactive.
@@ -29,7 +29,7 @@ Setting up this project locally:
 
 
 ## Live Demo
-[Live Demo Link]()
+
 
 
 ## Prerequisites
@@ -46,7 +46,20 @@ In the previous project, you worked on the setup of a React application using Cr
      - Create a separate component for this form (with inputs for a title and an author [IMPORTANT in the design you can see an input for a category - please replace it with an author.]).
   - Categories:
     - Should display a button "Check status" only.
-
+- Import Redux Provider and your store in the main component of your React app.
+- Connect your app to the Redux store.
+- Use useSelector to consume the state.
+- In React component responsible for adding new books, add functionality for "Add new" button click:
+  - Import Redux useDispatch.
+  - Set the data inputs in the local React state.
+  - Dispatch a corresponding action.
+- In React component responsible for removing books, add functionality for "Remove" button click:
+  - Import Redux useDispatch.
+  - Dispatch a corresponding action.
+- In React component responsible for categories, add functionality for the "Check status" button click:
+  - Import Redux useDispatch.
+  - Dispatch a corresponding action.
+- Use the information detailed in Zeplin to style the website.
 
 ## Authors
 
